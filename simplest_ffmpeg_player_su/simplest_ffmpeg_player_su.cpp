@@ -66,6 +66,8 @@ extern "C"
 #endif
 #endif
 
+extern "C" { FILE __iob_func[3] = { *stdin,*stdout,*stderr }; }
+
 //Refresh Event
 #define SFM_REFRESH_EVENT  (SDL_USEREVENT + 1)
 

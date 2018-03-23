@@ -49,6 +49,7 @@ extern "C"
 #endif
 #endif
 
+extern "C" { FILE __iob_func[3] = { *stdin,*stdout,*stderr }; }
 
 int main(int argc, char* argv[])
 {

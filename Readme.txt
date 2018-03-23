@@ -47,3 +47,17 @@ disadvantages:
 by avcodec_decode_video2()
 SU（SDL Update）Version solved 2 problems above. It create a thread to send SDL 
 Event every 40ms to tell the main loop to decode and show video frames.
+
+
+工程在VS2015以及以上版本运行所遇到的问题：
+https://blog.csdn.net/hejjunlin/article/details/68921811
+https://blog.csdn.net/hebbely/article/details/53780562
+
+ERROR:
+LNK2019	无法解析的外部符号 __imp__fprintf，该符号在函数 _ShowError 中被引用	simplest_ffmpeg_player2_su	D:\jiguo\workspace\simplest_ffmpeg_player\simplest_ffmpeg_player_su\SDL2main.lib(SDL_windows_main.obj)	1	
+解决：添加链接库legacy_stdio_definitions.lib
+
+LNK2019	无法解析的外部符号 __imp____iob_func，该符号在函数 _ShowError 中被引用	simplest_ffmpeg_player2	D:\jiguo\workspace\simplest_ffmpeg_player\simplest_ffmpeg_player\SDL2main.lib(SDL_windows_main.obj)	1	
+CPP中添加一个函数：extern "C" { FILE __iob_func[3] = { *stdin,*stdout,*stderr }; }
+
+

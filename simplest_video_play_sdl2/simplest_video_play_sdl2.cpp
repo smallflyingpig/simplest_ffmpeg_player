@@ -50,6 +50,8 @@ extern "C"
 #include "sdl/SDL.h"
 };
 
+extern "C" { FILE __iob_func[3] = { *stdin,*stdout,*stderr }; }
+
 const int bpp=12;
 
 int screen_w=500,screen_h=500;

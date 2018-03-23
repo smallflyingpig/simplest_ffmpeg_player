@@ -41,6 +41,7 @@ extern "C"
 #endif
 #endif
 
+extern "C" { FILE __iob_func[3] = { *stdin,*stdout,*stderr }; }
 
 //test different codec
 #define TEST_H264  1
